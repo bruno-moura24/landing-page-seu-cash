@@ -11,14 +11,29 @@ export default function Home() {
             width={460}
             height={130}
             className="brand-logo"
+            style={{
+              marginLeft: "clamp(82px, 8.3vw, 210px)",
+              width: "clamp(300px, 36vw, 560px)",
+              height: "auto",
+            }}
             priority
           />
 
-          <div className="chat-bubble bubble-small">Precisa de mais credito?</div>
+          <div
+            className="bubbles-group"
+            style={{ marginTop: "clamp(14px, 1.9vh, 26px)" }}
+          >
+            <div className="chat-bubble bubble-small">Precisa de mais credito?</div>
 
-          <div className="chat-bubble bubble-large">
-            <span>Com a Seu Cash,</span>
-            <strong>voce consegue de onde estiver!</strong>
+            <div className="chat-bubble bubble-large">
+              <span>Com a Seu Cash,</span>
+              <strong>voce consegue de onde estiver!</strong>
+            </div>
+
+            <div className="chat-bubble bubble-large">
+              <span>Alem disso, voce consegue</span>
+              <strong>contratar em apenas 2 minutos de onde estiver!</strong>
+            </div>
           </div>
 
           <a
