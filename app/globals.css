@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+:root {
+  --background: #28004c;
+  --foreground: #ffffff;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 68% 34%, rgba(207, 170, 255, 0.32) 0%, rgba(207, 170, 255, 0) 44%),
+    linear-gradient(130deg, #250047 8%, #4f0fa3 48%, #9555ff 100%);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), "Segoe UI", sans-serif;
+}
+
+.landing-shell {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+}
+
+.landing-stage {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: visible;
+  border-radius: 0;
+  /* Reference container for the absolutely positioned model image. */
+  position: relative;
+  align-items: start;
+}
+
+.landing-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: clamp(48px, 8vh, 120px) clamp(12px, 2vw, 24px) 0 clamp(12px, 2vw, 32px);
+  z-index: 3;
+  gap: clamp(18px, 3.4vh, 40px);
+}
+
+.brand-logo {
+  width: clamp(260px, 32vw, 500px);
+  height: auto;
+  margin-bottom: 0;
+}
+
+.chat-bubble {
+  background: #f3edf9;
+  color: #111111;
+  border-radius: 18px;
+  line-height: 1.12;
+  letter-spacing: 0;
+  box-shadow: 0 12px 24px rgba(27, 0, 52, 0.28);
+  text-align: left;
+}
+
+.bubble-small {
+  position: relative;
+  width: fit-content;
+  padding: clamp(12px, 1.4vw, 16px) clamp(18px, 2vw, 44px);
+  font-size: clamp(26px, 2.6vw, 42px);
+  margin-bottom: 0;
+  align-self: flex-start;
+}
+
+.bubble-small::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  bottom: -14px;
+  border-right: 16px solid transparent;
+  border-top: 16px solid #f3edf9;
+}
+
+.bubble-large {
+  width: fit-content;
+  max-width: min(650px, 95%);
+  padding: clamp(14px, 1.4vw, 20px) clamp(18px, 2vw, 30px);
+  font-size: clamp(28px, 2.1vw, 44px);
+  margin-left: clamp(22px, 6.2vw, 140px);
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-self: flex-start;
+}
+
+.bubble-large strong {
+  font-weight: 800;
+}
+
+.cta-button {
+  width: fit-content;
+  min-width: 0;
+  max-width: 100%;
+  padding: clamp(12px, 1.5vw, 20px) clamp(24px, 2.2vw, 48px);
+  border-radius: 999px;
+  background: #f5f3fa;
+  color: #5b2db8;
+  font-size: clamp(26px, 2.1vw, 52px);
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 14px 34px rgba(22, 0, 41, 0.34);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  margin-left: clamp(8px, 4vw, 96px);
+  margin-top: clamp(6px, 1.2vh, 14px);
+  align-self: flex-start;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px rgba(22, 0, 41, 0.39);
+}
+
+.landing-model {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  pointer-events: none;
+  overflow: visible;
+  padding-right: clamp(10px, 2vw, 40px);
+}
+
+.model-image {
+  width: auto;
+  height: 100vh;
+  max-width: none;
+  object-fit: contain;
+  object-position: right bottom;
+  transform: translateX(clamp(30px, 6vw, 160px));
+}
+
+@media (max-width: 900px) {
+  .landing-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-model {
+    /* On smaller screens, return the image to normal flow and center it. */
+    position: relative;
+    width: 100%;
+    height: 300px;
+    justify-content: center;
+  }
+
+  .model-image {
+    width: min(78vw, 500px);
+    height: auto;
+    max-width: 100%;
+    transform: none;
+  }
+
+  .landing-copy {
+    padding-bottom: 18px;
+  }
+
+  .cta-button {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .landing-shell {
+    padding: 0;
+  }
+
+  .landing-stage {
+    min-height: 100vh;
+    border-radius: 0;
+  }
+
+  .landing-copy {
+    padding: 26px 14px 10px;
+  }
+
+  .brand-logo {
+    width: min(82vw, 360px);
+    margin-bottom: 28px;
+  }
+
+  .bubble-small,
+  .bubble-large {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .bubble-small {
+    font-size: clamp(20px, 6.3vw, 30px);
+  }
+
+  .bubble-large {
+    font-size: clamp(21px, 5.4vw, 31px);
+  }
+
+  .cta-button {
+    font-size: clamp(24px, 6.6vw, 36px);
+  }
+}
