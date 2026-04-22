@@ -112,20 +112,20 @@ body {
 
 .bubbles-group > .chat-bubble {
   opacity: 0;
-  animation: bubble-enter 720ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation: bubble-enter 1450ms cubic-bezier(0.16, 0.84, 0.24, 1) both;
   will-change: transform, opacity, filter;
 }
 
 .bubbles-group > .chat-bubble:nth-child(1) {
-  animation-delay: 140ms;
+  animation-delay: 450ms;
 }
 
 .bubbles-group > .chat-bubble:nth-child(2) {
-  animation-delay: 300ms;
+  animation-delay: 2100ms;
 }
 
 .bubbles-group > .chat-bubble:nth-child(3) {
-  animation-delay: 460ms;
+  animation-delay: 3750ms;
 }
 
 .bubble-small {
@@ -185,9 +185,10 @@ body {
   margin-left: clamp(8px, 4vw, 96px);
   margin-top: clamp(6px, 1.2vh, 14px);
   align-self: flex-start;
+  opacity: 0;
   animation:
-    bubble-enter 720ms cubic-bezier(0.2, 0.8, 0.2, 1) 560ms both,
-    bubble-bounce 2.2s ease-in-out 1.15s infinite;
+    bubble-enter 900ms cubic-bezier(0.2, 0.8, 0.2, 1) 3750ms both,
+    bubble-bounce 2.2s ease-in-out 4750ms infinite;
   will-change: transform, opacity;
 }
 
@@ -245,8 +246,8 @@ body {
   .cta-button {
     min-width: 100%;
     animation:
-      bubble-enter 720ms cubic-bezier(0.2, 0.8, 0.2, 1) 560ms both,
-      bubble-bounce 2.2s ease-in-out 1.15s infinite;
+      bubble-enter 900ms cubic-bezier(0.2, 0.8, 0.2, 1) 3750ms both,
+      bubble-bounce 2.2s ease-in-out 4750ms infinite;
   }
 }
 

@@ -6,7 +6,7 @@ export default function Home() {
       <section className="landing-stage">
         <div className="landing-copy">
           <Image
-            src="/logos aprovados-02.png"
+            src="/logo-seu-cash.png"
             alt="Logo Seu Cash"
             width={460}
             height={130}
